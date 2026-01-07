@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>MS Teams Chat Name Vote</title>
+		<style>
+			body {
+				font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+					sans-serif;
+				margin: 0;
+			}
+			.wrap {
+				max-width: 900px;
+				margin: 0 auto;
+				padding: 24px;
+			}
+			h1 {
+				margin: 0 0 8px;
+				font-size: 24px;
+			}
+			p {
+				margin: 0 0 16px;
+				line-height: 1.35;
+			}
+			fieldset {
+				border: 1px solid #ddd;
+				border-radius: 12px;
+				padding: 16px;
+			}
+			legend {
+				padding: 0 8px;
+			}
+			label {
+				display: block;
+				padding: 10px 8px;
+				border-radius: 10px;
+				cursor: pointer;
+			}
+			label:hover {
+				background: #f6f6f6;
+			}
+			.row {
+				display: flex;
+				gap: 10px;
+				flex-wrap: wrap;
+				margin-top: 16px;
+			}
+			button {
+				padding: 10px 14px;
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				cursor: pointer;
+			}
+			button.primary {
+				border-color: #111;
+				background: #111;
+				color: #fff;
+			}
+			.msg {
+				margin-top: 12px;
+			}
+			textarea {
+				width: 100%;
+				min-height: 90px;
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				padding: 10px;
+			}
+			.small {
+				font-size: 12px;
+				color: #555;
+				margin-top: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<h1>MS Teams Chat Name Vote / Vote – Nom de la conversation MS Teams</h1>
+			<p>Vote for the best name. / Votez pour le meilleur nom.</p>
+
+			<form id="poll">
+				<fieldset>
+					<legend>Choose one / Choisissez-en un</legend>
+
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Indigenous Intelligence Agency - L’Agence de l’intelligence autochtone"
+							required
+						/>
+						The Indigenous Intelligence Agency - L’Agence de l’intelligence
+						autochtone</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Indigenous Ingenuity Squad - L’Escouade de l’ingéniosité autochtone"
+						/>
+						The Indigenous Ingenuity Squad - L’Escouade de l’ingéniosité
+						autochtone</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Culture Crew - La Brigade culturelle"
+						/>
+						The Culture Crew - La Brigade culturelle</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Four Directions Dream Team - La Dream Team des quatre directions"
+						/>
+						The Four Directions Dream Team - La Dream Team des quatre
+						directions</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Eagle-Eyed Educators - Les pédagogues à l’œil d’aigle"
+						/>
+						The Eagle-Eyed Educators - Les pédagogues à l’œil d’aigle</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Moose Tracks Think Tank - Le laboratoire d’idées des traces d’orignal"
+						/>
+						The Moose Tracks Think Tank - Le laboratoire d’idées des traces
+						d’orignal</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Learning Lodge Legends - Les légendes du lodge d’apprentissage"
+						/>
+						The Learning Lodge Legends - Les légendes du lodge
+						d’apprentissage</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Beaver Believers - Les croyants du castor"
+						/>
+						The Beaver Believers - Les croyants du castor</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Moose Whisperers - Ceux qui parlent aux orignaux"
+						/>
+						The Moose Whisperers - Ceux qui parlent aux orignaux</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Bannock Battalion - Le bataillon du bannock"
+						/>
+						The Bannock Battalion - Le bataillon du bannock</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Indigenous Institute of Advanced Skodenology - L’Institut autochtone de skodénologie avancée"
+						/>
+						The Indigenous Institute of Advanced Skodenology - L’Institut
+						autochtone de skodénologie avancée</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The Skoden Squad - L’Équipe Skoden"
+						/>
+						The Skoden Squad - L’Équipe Skoden</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="The SKODEN Schoolies - Les écoliers Skoden"
+						/>
+						The SKODEN Schoolies - Les écoliers Skoden</label
+					>
+					<label
+						><input
+							type="radio"
+							name="choice"
+							value="Indigenous Learning - Apprentissage autochtone"
+						/>
+						Indigenous Learning - Apprentissage autochtone</label
+					>
+				</fieldset>
+
+				<div style="margin-top: 16px">
+					<label for="idea"
+						><b>Other name idea (optional) / Autre idée (facultatif)</b></label
+					>
+					<textarea
+						id="idea"
+						name="idea"
+						placeholder="Type here / Écrivez ici"
+					></textarea>
+					<div class="small">
+						Note: this page needs an API endpoint to store votes. GitHub Pages
+						hosts only the form UI.
+					</div>
+				</div>
+
+				<div class="row">
+					<button class="primary" type="submit">Submit vote</button>
+					<button type="button" id="test">Test (no API)</button>
+				</div>
+
+				<div class="msg" id="msg" aria-live="polite"></div>
+			</form>
+		</div>
+
+		<script>
+			// TODO: replace with your backend API endpoint (Cloudflare Worker / Supabase / etc.)
+			const API_URL = ""; // e.g. "https://your-api.example.com/vote"
+
+			const msg = document.getElementById("msg");
+			const form = document.getElementById("poll");
+			const testBtn = document.getElementById("test");
+
+			testBtn.addEventListener("click", () => {
+				const choice = form.choice.value;
+				const idea = form.idea.value.trim();
+				msg.textContent =
+					`✅ Looks good. Selected: ${choice}` +
+					(idea ? ` | Idea: ${idea}` : "");
+			});
+
+			form.addEventListener("submit", async (e) => {
+				e.preventDefault();
+				const choice = form.choice.value;
+				const idea = form.idea.value.trim();
+
+				if (!API_URL) {
+					msg.textContent =
+						"⚠️ No API_URL set yet. This page is deployed, but votes aren’t being stored.";
+					return;
+				}
+
+				msg.textContent = "Submitting…";
+
+				try {
+					const res = await fetch(API_URL, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ choice, idea }),
+					});
+
+					if (!res.ok) throw new Error(`HTTP ${res.status}`);
+					msg.textContent = "✅ Vote submitted. Thank you!";
+					form.reset();
+				} catch (err) {
+					msg.textContent = `❌ Submit failed: ${err.message}`;
+				}
+			});
+		</script>
+	</body>
+</html>
